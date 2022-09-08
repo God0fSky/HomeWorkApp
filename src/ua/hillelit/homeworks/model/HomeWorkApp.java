@@ -1,26 +1,27 @@
 package ua.hillelit.homeworks.model;
 
+import java.time.Year;
 import java.util.Calendar;
 
 public class HomeWorkApp {
 
     public static void main(String[] args) {
         printThreeWords();
-        System.out.println("----------------------------");
+        System.out.println("-".repeat(20));
         checkSumSign();
-        System.out.println("----------------------------");
+        System.out.println("-".repeat(20));
         printColor();
-        System.out.println("----------------------------");
+        System.out.println("-".repeat(20));
         compareNumbers();
-        System.out.println("----------------------------");
+        System.out.println("-".repeat(20));
         System.out.println(checkSum(5, -9));
-        System.out.println("----------------------------");
+        System.out.println("-".repeat(20));
         checkNumber(-1);
-        System.out.println("----------------------------");
+        System.out.println("-".repeat(20));
         System.out.println(checkNumberBool(0));
-        System.out.println("----------------------------");
+        System.out.println("-".repeat(20));
         printString("sdfgsdfg", 1);
-        System.out.println("----------------------------");
+        System.out.println("-".repeat(20));
         System.out.println(checkYear(2008));
     }
 
@@ -80,9 +81,7 @@ public class HomeWorkApp {
     }
 
     public static boolean checkYear(int year) {
-        Calendar cal = Calendar.getInstance();
-        cal.set(Calendar.YEAR, year);
-        return cal.getActualMaximum(Calendar.DAY_OF_YEAR) > 365;
+        return Year.of(year).isLeap();
     }
 
 }
